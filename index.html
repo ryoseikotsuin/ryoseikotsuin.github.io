@@ -1,28 +1,127 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>りょう整骨院</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background: #f9f9f9;
-      text-align: center;
-      padding: 4rem;
-    }
-    h1 {
-      color: #006666;
-      font-size: 2.5rem;
-    }
-    p {
-      font-size: 1.2rem;
-      color: #444;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>りょう整骨院 - プロっぽい動きあり</title>
+<style>
+  body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    background: #f0f8f5;
+    margin: 0;
+    padding: 0;
+    color: #004d40;
+  }
+  header {
+    background: #00796b;
+    color: white;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideDown 0.5s ease forwards;
+  }
+  @keyframes slideDown {
+    from {transform: translateY(-100%);}
+    to {transform: translateY(0);}
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: #80cbc4;
+  }
+  main {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    animation: fadeIn 1s ease forwards;
+  }
+  p.lead {
+    font-size: 1.2rem;
+    color: #00695c;
+    animation: fadeIn 1.5s ease forwards;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+  .btn-reserve {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background: #004d40;
+    color: white;
+    font-weight: 700;
+    border-radius: 25px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  .btn-reserve:hover {
+    background: #00796b;
+    transform: scale(1.05);
+  }
+  footer {
+    margin-top: 4rem;
+    padding: 1rem 2rem;
+    background: #004d40;
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <h1>りょう整骨院</h1>
-  <p>完全予約制｜○○市○○区｜○○-○○-○○</p>
+<header>
+  <div class="logo">りょう整骨院</div>
+  <nav>
+    <a href="#about">施術内容</a>
+    <a href="#access">アクセス</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+</header>
+<main>
+  <h1>完全予約制の安心整骨院</h1>
+  <p class="lead">○○市○○区｜最新技術であなたの健康をサポートします</p>
+  <a href="mailto:info@ryoseikotsuin.jp" class="btn-reserve">予約・お問い合わせ</a>
+
+  <section id="about" style="margin-top:4rem;">
+    <h2>施術内容</h2>
+    <ul>
+      <li>骨格矯正</li>
+      <li>鍼灸治療</li>
+      <li>スポーツ障害ケア</li>
+    </ul>
+  </section>
+
+  <section id="access" style="margin-top:4rem;">
+    <h2>アクセス</h2>
+    <p>〒000-0000 ○○市○○区○○町1-2-3</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <section id="contact" style="margin-top:4rem;">
+    <h2>お問い合わせ</h2>
+    <p>お気軽にメールやお電話でどうぞ</p>
+    <p>電話: 000-0000-0000</p>
+  </section>
+</main>
+<footer>
+  &copy; 2025 りょう整骨院 - All rights reserved.
+</footer>
 </body>
 </html>
+
