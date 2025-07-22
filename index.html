@@ -1,157 +1,327 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>りょう整骨院・鍼灸院 | 堺市堺区の完全予約制</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    /* リセット */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>りょう整骨院・鍼灸院 | 堺市堺区 完全予約制</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  /* リセット */
+  *, *::before, *::after {
+    margin:0; padding:0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: url('https://images.unsplash.com/photo-1606813902874-3b54c5c6ef4b?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+  }
+  /* オーバーレイで白背景と影 */
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    padding: 2.5rem 3rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  /* ナビゲーション */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: #e76f11;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+  }
+  nav a {
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: #222;
+  }
+  .btn-reserve {
+    background: #fff;
+    color: #e76f11;
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(231,111,17,0.7);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .btn-reserve:hover {
+    background-color: #e76f11;
+    color: #fff;
+  }
+  /* ヘッダー */
+  header {
+    margin-top: 70px; /* navの高さ分空ける */
+    text-align: center;
+    padding: 4rem 1rem 3rem;
+    color: #e76f11;
+  }
+  header h1 {
+    font-size: 3.8rem;
+    font-weight: 900;
+    margin-bottom: 0.3rem;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  }
+  header p {
+    font-size: 1.6rem;
+    font-weight: 600;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #555;
+  }
+  /* 施術メニューセクション */
+  #treatment {
+    margin-bottom: 3.5rem;
+  }
+  #treatment h2 {
+    font-size: 2rem;
+    color: #e76f11;
+    border-left: 8px solid #e76f11;
+    padding-left: 12px;
+    margin-bottom: 2rem;
+    font-weight: 900;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 24px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 1.8rem 1.4rem;
+    box-shadow: 0 8px 20px rgba(231,111,17,0.15);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(231,111,17,0.35);
+  }
+  .card svg {
+    width: 64px;
+    height: 64px;
+    fill: #e76f11;
+    margin-bottom: 1rem;
+  }
+  .card h3 {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+  }
+  .card p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  /* 施術写真セクション */
+  #gallery {
+    margin-bottom: 3.5rem;
+  }
+  #gallery h2 {
+    font-size: 2rem;
+    color: #e76f11;
+    border-left: 8px solid #e76f11;
+    padding-left: 12px;
+    margin-bottom: 2rem;
+    font-weight: 900;
+  }
+  .photos {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .photos img {
+    width: 30%;
+    height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease;
+  }
+  .photos img:hover {
+    transform: scale(1.05);
+  }
+  /* アクセスセクション */
+  #access {
+    margin-bottom: 3.5rem;
+  }
+  #access h2 {
+    font-size: 2rem;
+    color: #e76f11;
+    border-left: 8px solid #e76f11;
+    padding-left: 12px;
+    margin-bottom: 1.5rem;
+    font-weight: 900;
+  }
+  #access p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 1rem;
+  }
+  #map {
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+  /* フッター */
+  footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border-radius: 0 0 16px 16px;
+    font-size: 0.9rem;
+  }
+  /* 固定追尾予約ボタン */
+  #reserve-fixed {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #e76f11;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 32px;
+    font-weight: 900;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 30px rgba(231,111,17,0.75);
+    cursor: pointer;
+    z-index: 10000;
+    transition: background-color 0.3s ease;
+    user-select: none;
+    text-decoration: none;
+  }
+  #reserve-fixed:hover {
+    background-color: #bf5800;
+  }
+  /* レスポンシブ */
+  @media (max-width: 900px) {
+    .photos img {
+      width: 48%;
+      height: 180px;
     }
-
-    body {
-      font-family: 'Noto Sans JP', sans-serif;
-      color: #333;
-      background: url('https://images.unsplash.com/photo-1611622340638-c53d074b2f1e?auto=format&fit=crop&w=1740&q=80') no-repeat center center fixed;
-      background-size: cover;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .overlay {
-      background-color: rgba(255, 255, 255, 0.92);
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 3rem 2rem;
-      max-width: 900px;
-      margin: auto;
-      border-radius: 15px;
-      box-shadow: 0 0 30px rgba(0,0,0,0.2);
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
+  }
+  @media (max-width: 480px) {
     header h1 {
-      font-size: 3rem;
-      color: #e56a00;
-      margin-bottom: 0.3rem;
+      font-size: 2.5rem;
     }
-
     header p {
-      font-size: 1.3rem;
-      color: #555;
-      line-height: 1.5;
-      font-weight: 500;
-    }
-
-    main {
       font-size: 1.1rem;
-      color: #444;
-      line-height: 1.6;
     }
-
-    main h2 {
-      color: #e56a00;
-      border-left: 6px solid #e56a00;
-      padding-left: 0.6rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      font-size: 1.6rem;
+    nav a {
+      margin: 0 12px;
+      font-size: 1rem;
     }
-
-    main .section {
-      margin-bottom: 2.5rem;
+    #reserve-fixed {
+      padding: 12px 22px;
+      font-size: 1rem;
+      bottom: 16px;
+      right: 16px;
     }
-
-    main .section p {
-      margin-bottom: 1rem;
-    }
-
-    .btn-reserve {
-      display: inline-block;
-      background-color: #e56a00;
-      color: white;
-      font-weight: 700;
-      padding: 1rem 2rem;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      margin-top: 1rem;
-    }
-
-    .btn-reserve:hover {
-      background-color: #bf5500;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      background-color: #333;
-      color: white;
-      font-size: 0.9rem;
-      margin-top: 2rem;
-      border-radius: 0 0 15px 15px;
-    }
-
-    /* レスポンシブ */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-      main h2 {
-        font-size: 1.3rem;
-      }
-      .btn-reserve {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-      }
-      .overlay {
-        padding: 2rem 1rem;
-        border-radius: 0;
-        box-shadow: none;
-      }
-      footer {
-        border-radius: 0;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <div class="overlay" role="main">
+
+  <!-- ナビ -->
+  <nav>
+    <a href="#treatment">施術内容</a>
+    <a href="#gallery">施術写真</a>
+    <a href="#access">アクセス</a>
+    <a href="tel:0722459191" class="btn-reserve" aria-label="電話で予約">予約・お問い合わせ</a>
+  </nav>
+
+  <!-- メインコンテナ -->
+  <div class="container">
+
+    <!-- ヘッダー -->
     <header>
       <h1>りょう整骨院・鍼灸院</h1>
-      <p>堺市堺区で「痛み」と「美」に寄り添う、完全予約制の東洋医療</p>
+      <p>肩こり・腰痛・美容鍼・スポーツ障害まで<br>東洋医学×現代技術で根本改善</p>
     </header>
 
-    <main>
-      <section class="section" id="treatment">
-        <h2>施術内容</h2>
-        <p>骨格・筋肉調整、鍼灸治療、美容鍼、スポーツ障害対応など、多彩なメニューであなたの健康をサポートします。</p>
-        <a href="tel:0722459191" class="btn-reserve" aria-label="電話で予約する">今すぐ予約・お問い合わせ</a>
-      </section>
+    <!-- 施術内容 -->
+    <section id="treatment" aria-label="施術内容">
+      <h2>施術内容</h2>
+      <div class="cards">
+        <article class="card" tabindex="0">
+          <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M32 2a30 30 0 1 0 30 30A30 30 0 0 0 32 2Zm0 56a26 26 0 1 1 26-26 26 26 0 0 1-26 26Z"/><path d="M32 18a14 14 0 1 0 14 14A14 14 0 0 0 32 18Zm0 24a10 10 0 1 1 10-10 10 10 0 0 1-10 10Z"/></svg>
+          <h3>骨格・筋肉調整</h3>
+          <p>手技療法で体の歪みを整え、痛みの根本から改善します。</p>
+        </article>
 
-      <section class="section" id="access">
-        <h2>アクセス・連絡先</h2>
-        <p>〒590-0047 大阪府堺市堺区二条通1-2</p>
-        <p>TEL：<a href="tel:0722459191">072-245-9191</a></p>
-        <p>受付時間：9:00〜12:30／15:00〜19:30（完全予約制）<br>休診日：日曜・祝日</p>
-      </section>
-    </main>
+        <article class="card" tabindex="0">
+          <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="30" /><path d="M40 20h-4v24h4Zm-12 0h-4v24h4Z" fill="#fff"/></svg>
+          <h3>鍼灸治療</h3>
+          <p>伝統的な鍼灸施術で血行促進・自然治癒力を高めます。</p>
+        </article>
+
+        <article class="card" tabindex="0">
+          <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><rect x="18" y="16" width="28" height="32" rx="8" ry="8" fill="none" stroke="#e76f11" stroke-width="3"/><line x1="32" y1="12" x2="32" y2="52" stroke="#e76f11" stroke-width="3"/></svg>
+          <h3>美容鍼</h3>
+          <p>顔や肌の若返りを促進し、自然な美しさを引き出します。</p>
+        </article>
+
+        <article class="card" tabindex="0">
+          <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="30" /><path d="M24 24h16v16H24z" fill="none" stroke="#e76f11" stroke-width="3"/></svg>
+          <h3>スポーツ障害対応</h3>
+          <p>スポーツ障害の早期回復をサポート。パフォーマンス向上にも。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 施術写真 -->
+    <section id="gallery" aria-label="施術写真">
+      <h2>施術写真</h2>
+      <div class="photos">
+        <img src="https://images.unsplash.com/photo-1606813902874-3b54c5c6ef4b?auto=format&fit=crop&w=800&q=80" alt="鍼灸施術中の手元" />
+        <img src="https://images.unsplash.com/photo-1611622340638-c53d074b2f1e?auto=format&fit=crop&w=800&q=80" alt="骨格調整の施術" />
+        <img src="https://images.unsplash.com/photo-1622508747704-e7a4d9c85e1f?auto=format&fit=crop&w=800&q=80" alt="電気治療機器の使用風景" />
+      </div>
+    </section>
+
+    <!-- アクセス -->
+    <section id="access" aria-label="アクセス">
+      <h2>アクセス・連絡先</h2>
+      <p>〒590-0047 大阪府堺市堺区二条通1-2</p>
+      <p>TEL：<a href="tel:0722459191">072-245-9191</a></p>
+      <p>受付時間：9:00〜12:30／15:00〜19:30（完全予約制）</p>
+      <p>休診日：日曜・祝日・水曜・土曜午後</p>
+      <div id="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.6909202793853!2d135.47915941521845!3d34.56957228045417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000dd2639e7d235%3A0x7ca7b5b3787b7e01!2z5p2x5Lqs6KW_5L-h5rC06aO95pel!5e0!3m2!1sja!2sjp!4v1690031234567!5m2!1sja!2sjp"
+          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+
   </div>
+
+  <!-- 固定予約ボタン -->
+  <a href="tel:0722459191" id="reserve-fixed" aria-label="電話で予約">今すぐ予約・お問い合わせ</a>
 
   <footer>
     &copy; 2025 りょう整骨院・鍼灸院
   </footer>
+
 </body>
 </html>
