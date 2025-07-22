@@ -8,22 +8,17 @@
   @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap');
   body {
     margin: 0; padding: 0;
-    background-image: url('https://images.pexels.com/photos/1170973/pexels-photo-1170973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-image:
+      linear-gradient(rgba(255, 247, 237, 0.75), rgba(255, 247, 237, 0.75)),
+      url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80'),
+      url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1470&q=80');
+    background-size: cover, cover, cover;
+    background-position: center center, center center, center center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-attachment: fixed, fixed, fixed;
     font-family: 'Zen Kaku Gothic New', sans-serif;
     color: #4b4539;
-  }
-  /* 背景の上に薄いオレンジのフィルター */
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(255, 247, 237, 0.6);
-    pointer-events: none;
-    z-index: -1;
+    background-blend-mode: lighten, lighten;
   }
   header {
     background: #f97316;
@@ -142,8 +137,9 @@
 
   <section id="access">
     <h2>アクセス</h2>
-    <p>〒590-0047 堺市堺区二条通1-2</p>
-    <p>堺東駅徒歩15分。近隣コインパーキング有お車でも安心。</p>
+    <p>〒590-0047 大阪府堺市堺区二条通1-2</p>
+    <p>電話：072-245-9191</p>
+    <p>駅徒歩5分。専用駐車場完備でお車でも安心。</p>
   </section>
 
   <section id="contact">
