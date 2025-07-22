@@ -3,80 +3,146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>りょう整骨院｜堺市堺区の完全予約制整骨院</title>
+  <title>りょう整骨院・鍼灸院</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
 
     body {
+      margin: 0;
       font-family: 'Noto Sans JP', sans-serif;
-      background: url('https://images.unsplash.com/photo-1600185365483-26d7b3eafdfb?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+      color: #333;
+      background-color: #fff5ec;
+    }
+
+    header {
+      background-image: url('https://images.unsplash.com/photo-1588776814546-ec8a2a7f4782?auto=format&fit=crop&w=1600&q=80');
       background-size: cover;
-      color: #fff;
+      background-position: center;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
     }
 
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.6);
-      min-height: 100vh;
-      padding: 3rem 1rem;
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+      background-color: rgba(255, 102, 0, 0.8);
+      display: inline-block;
+      padding: 0.2em 1em;
+      border-radius: 10px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2em;
+      background-color: rgba(0, 0, 0, 0.4);
+      display: inline-block;
+      padding: 0.3em 1em;
+      border-radius: 10px;
+    }
+
+    nav {
+      background-color: #ff6600;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: #ff6600;
+      border-left: 6px solid #ff6600;
+      padding-left: 10px;
+    }
+
+    .features {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      text-align: center;
+    .feature {
+      flex: 1 1 300px;
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
+    footer {
+      background-color: #333;
+      color: white;
       text-align: center;
-    }
-
-    .info {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 1.5rem 2rem;
-      border-radius: 1rem;
-      backdrop-filter: blur(5px);
-      text-align: center;
-      font-size: 1.1rem;
-      line-height: 2;
+      padding: 20px;
+      font-size: 0.9em;
     }
 
     @media screen and (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      h2 {
-        font-size: 1.2rem;
-      }
-
-      .info {
-        font-size: 1rem;
-        padding: 1rem;
+      header h1 {
+        font-size: 1.8em;
       }
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <h1>りょう整骨院</h1>
-    <h2>東洋医学×現代技術で、心と体を整える</h2>
-    <div class="info">
-      〒590-0047<br />
-      大阪府堺市堺区二条通1-2<br />
-      ご予約専用：072-245-9191<br /><br />
-      完全予約制｜柔道整復・鍼灸・美容鍼・骨盤矯正など対応<br />
-      保険適用可・各種交通事故治療相談も受付中
+  <header>
+    <h1>りょう整骨院・鍼灸院</h1>
+    <p>堺市で「痛み」と「美」の両方に寄り添う、完全予約制の東洋医療。</p>
+  </header>
+
+  <nav>
+    <a href="#concept">コンセプト</a>
+    <a href="#treatment">施術内容</a>
+    <a href="#access">アクセス</a>
+  </nav>
+
+  <section id="concept">
+    <h2>私たちの想い</h2>
+    <p>
+      整骨・鍼灸の技術で、根本から身体を整える。「治すだけでなく、癒す」——その一針一手に心を込めて、患者様と向き合います。
+    </p>
+  </section>
+
+  <section id="treatment">
+    <h2>施術内容</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>保険診療（整骨）</h3>
+        <p>骨折・脱臼・捻挫・打撲・挫傷などの急性外傷に対応。</p>
+      </div>
+      <div class="feature">
+        <h3>鍼灸治療</h3>
+        <p>腰痛・肩こり・神経痛・自律神経の乱れにも効果的な東洋医学的アプローチ。</p>
+      </div>
+      <div class="feature">
+        <h3>美容鍼</h3>
+        <p>肌のリフトアップやたるみ、くすみにアプローチ。女性から高い支持を得ています。</p>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <section id="access">
+    <h2>アクセス</h2>
+    <p><strong>住所：</strong>大阪府堺市堺区二条通1-2</p>
+    <p><strong>電話番号：</strong>072-245-9191</p>
+    <p><strong>受付時間：</strong>9:00〜12:30 / 15:00〜19:30（完全予約制）</p>
+    <p><strong>定休日：</strong>日曜・祝日</p>
+  </section>
+
+  <footer>
+    &copy; 2025 りょう整骨院・鍼灸院 All rights reserved.
+  </footer>
 </body>
 </html>
