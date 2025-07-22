@@ -2,104 +2,156 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>りょう整骨院・鍼灸院 | 堺市堺区</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>りょう整骨院・鍼灸院 | 堺市堺区の完全予約制</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
-
+    /* リセット */
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
     }
 
     body {
       font-family: 'Noto Sans JP', sans-serif;
       color: #333;
-      background: url('https://images.unsplash.com/photo-1588776814546-ec0e5f9984c1?auto=format&fit=crop&w=1740&q=80') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1611622340638-c53d074b2f1e?auto=format&fit=crop&w=1740&q=80') no-repeat center center fixed;
       background-size: cover;
-    }
-
-    .overlay {
-      background-color: rgba(255, 255, 255, 0.88);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+    }
+
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.92);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
-      padding: 40px 20px;
+      padding: 3rem 2rem;
+      max-width: 900px;
+      margin: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.2);
     }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
+    header {
       text-align: center;
+      margin-bottom: 2rem;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5em;
-      color: #d16e30;
+    header h1 {
+      font-size: 3rem;
+      color: #e56a00;
+      margin-bottom: 0.3rem;
     }
 
-    p.subheading {
-      font-size: 1.2rem;
-      margin-bottom: 1.5em;
-      color: #666;
+    header p {
+      font-size: 1.3rem;
+      color: #555;
+      line-height: 1.5;
+      font-weight: 500;
     }
 
-    .info-box {
-      background: #fff;
-      border-left: 6px solid #d16e30;
-      padding: 1.5em;
-      margin-top: 1.5em;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-
-    .info-box h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5em;
-    }
-
-    .info-box p {
+    main {
+      font-size: 1.1rem;
+      color: #444;
       line-height: 1.6;
     }
 
-    .contact {
-      margin-top: 2em;
-      font-size: 1rem;
-      color: #555;
+    main h2 {
+      color: #e56a00;
+      border-left: 6px solid #e56a00;
+      padding-left: 0.6rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      font-size: 1.6rem;
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.8rem;
-      }
+    main .section {
+      margin-bottom: 2.5rem;
+    }
 
-      .info-box h2 {
-        font-size: 1.2rem;
+    main .section p {
+      margin-bottom: 1rem;
+    }
+
+    .btn-reserve {
+      display: inline-block;
+      background-color: #e56a00;
+      color: white;
+      font-weight: 700;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-top: 1rem;
+    }
+
+    .btn-reserve:hover {
+      background-color: #bf5500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #333;
+      color: white;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+      border-radius: 0 0 15px 15px;
+    }
+
+    /* レスポンシブ */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      main h2 {
+        font-size: 1.3rem;
+      }
+      .btn-reserve {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+      }
+      .overlay {
+        padding: 2rem 1rem;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      footer {
+        border-radius: 0;
       }
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <div class="container">
+  <div class="overlay" role="main">
+    <header>
       <h1>りょう整骨院・鍼灸院</h1>
-      <p class="subheading">肩こり・腰痛・美容鍼・スポーツ外傷まで<br>東洋医学×現代技術で根本改善</p>
+      <p>堺市堺区で「痛み」と「美」に寄り添う、完全予約制の東洋医療</p>
+    </header>
 
-      <div class="info-box">
-        <h2>⧉ 施術内容</h2>
-        <p>
-          骨格調整・筋肉調整・電気治療・美容鍼・小児鍼など、<br>
-          お一人おひとりに合わせた施術を提供いたします。
-        </p>
-      </div>
+    <main>
+      <section class="section" id="treatment">
+        <h2>施術内容</h2>
+        <p>骨格・筋肉調整、鍼灸治療、美容鍼、スポーツ障害対応など、多彩なメニューであなたの健康をサポートします。</p>
+        <a href="tel:0722459191" class="btn-reserve" aria-label="電話で予約する">今すぐ予約・お問い合わせ</a>
+      </section>
 
-      <div class="contact">
-        <p>〒590-0047<br>大阪府堺市堺区二条通1-2</p>
-        <p>ご予約・お問い合わせ：<strong>072-245-9191</strong></p>
-      </div>
-    </div>
+      <section class="section" id="access">
+        <h2>アクセス・連絡先</h2>
+        <p>〒590-0047 大阪府堺市堺区二条通1-2</p>
+        <p>TEL：<a href="tel:0722459191">072-245-9191</a></p>
+        <p>受付時間：9:00〜12:30／15:00〜19:30（完全予約制）<br>休診日：日曜・祝日</p>
+      </section>
+    </main>
   </div>
+
+  <footer>
+    &copy; 2025 りょう整骨院・鍼灸院
+  </footer>
 </body>
 </html>
