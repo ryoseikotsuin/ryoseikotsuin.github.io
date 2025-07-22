@@ -10,8 +10,8 @@
     margin: 0; padding: 0;
     background-color: #fff7ed;
     background-image:
-      url('https://upload.wikimedia.org/wikipedia/commons/1/14/Acupuncture_chart.jpg'),
-      url('https://upload.wikimedia.org/wikipedia/commons/4/4b/Washi_paper_texture.jpg'),
+      url('https://images.unsplash.com/photo-1588776814546-4d1c9bbfe3d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80'),
+      url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80'),
       linear-gradient(135deg, rgba(249,115,22,0.6), rgba(255,215,155,0.6));
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: center 20%, center center, center center;
@@ -78,3 +78,97 @@
     list-style-type: disc;
     padding-left: 1.5rem;
   }
+  ul li {
+    margin-bottom: 10px;
+  }
+  .btn {
+    display: inline-block;
+    background: #ea580c;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 5px 10px rgba(234,88,12,0.4);
+    transition: background 0.3s ease;
+  }
+  .btn:hover {
+    background: #c2410c;
+  }
+  footer {
+    text-align: center;
+    padding: 15px;
+    color: #4b4539;
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>りょう整骨院</h1>
+  <nav>
+    <a href="#about">施術内容</a>
+    <a href="#access">アクセス</a>
+    <a href="#contact">お問い合わせ</a>
+  </nav>
+</header>
+
+<main>
+  <section id="top" class="visible">
+    <h2>痛みの根本改善、もう我慢しないで</h2>
+    <p class="lead">
+      りょう整骨院は、痛みの原因を徹底的に追究し、再発を防ぐ根本改善を目指します。<br />
+      経験豊富なスタッフが最新技術を駆使し、あなたの健康な毎日をサポート。<br />
+      完全予約制で快適に通院いただけます。
+    </p>
+    <a href="#contact" class="btn">今すぐ予約する</a>
+  </section>
+
+  <section id="about">
+    <h2>私たちの施術内容</h2>
+    <ul>
+      <li>骨格矯正・姿勢改善で身体のバランスを整えます。</li>
+      <li>東洋医学の鍼灸治療で、自然治癒力を引き出します。</li>
+      <li>スポーツ外傷・慢性痛に対応した専門ケア。</li>
+      <li>女性専用メニュー・産後ケアも充実。</li>
+    </ul>
+  </section>
+
+  <section id="access">
+    <h2>アクセス</h2>
+    <p>〒590-0047 大阪府堺市堺区二条通1-2</p>
+    <p>電話：072-245-9191</p>
+    <p>駅徒歩5分。専用駐車場完備でお車でも安心。</p>
+  </section>
+
+  <section id="contact">
+    <h2>お問い合わせ</h2>
+    <p>ご予約・ご相談はお気軽に！24時間LINE予約対応中。専門スタッフが丁寧に対応いたします。</p>
+    <a href="mailto:info@ryoseikotsuin.jp" class="btn">ご予約・お問い合わせはこちら</a>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 りょう整骨院 | 地域の健康を支えるパートナー
+</footer>
+
+<script>
+  // スクロールでフェードインする処理
+  function onScroll() {
+    const sections = document.querySelectorAll('section');
+    const triggerBottom = window.innerHeight * 0.85;
+
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+      if(sectionTop < triggerBottom) {
+        section.classList.add('visible');
+      }
+    });
+  }
+  window.addEventListener('scroll', onScroll);
+  window.addEventListener('load', onScroll);
+</script>
+
+</body>
+</html>
