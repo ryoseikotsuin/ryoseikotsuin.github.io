@@ -7,10 +7,23 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap');
   body {
-    background: #fff7ed;
-    color: #4b4539;
-    font-family: 'Zen Kaku Gothic New', sans-serif;
     margin: 0; padding: 0;
+    background-image: url('https://images.pexels.com/photos/1170973/pexels-photo-1170973.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    color: #4b4539;
+  }
+  /* 背景の上に薄いオレンジのフィルター */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255, 247, 237, 0.6);
+    pointer-events: none;
+    z-index: -1;
   }
   header {
     background: #f97316;
@@ -129,8 +142,8 @@
 
   <section id="access">
     <h2>アクセス</h2>
-    <p>〒000-0000 ○○市○○区○○町1-2-3</p>
-    <p>駅徒歩5分。専用駐車場完備でお車でも安心。</p>
+    <p>〒590-0047 堺市堺区二条通1-2</p>
+    <p>堺東駅徒歩15分。近隣コインパーキング有お車でも安心。</p>
   </section>
 
   <section id="contact">
